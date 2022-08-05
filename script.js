@@ -4,11 +4,13 @@ const todoCtn = document.getElementById("todo-container");
 let state = true;
 
 inputAdd.onkeyup = (event) => {
+  state = true;
   if (event.key !== "Enter") return;
   //your code here
 
   if (inputAdd.value !== "") {
     addTodo(inputAdd.value, false);
+    saveTodo();
   } else {
     alert("Todo cannot be empty");
   }
